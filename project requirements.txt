@@ -1,0 +1,13 @@
+- creating the JSON files with each containing a quiz
+	- add keys (questions, text and options)
+	- for options, indicate whether the option is correct or not using is_answer
+- create class
+- create functions
+	- def quiz_list
+	- def quiz_import
+	- def quiz_take
+	- def quiz_result
+score out of questions he got right
+adding timing as a parameter in the JSON file
+import quizes from JSON files
+

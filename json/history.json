@@ -1,0 +1,73 @@
+{
+     "questions": 
+     [
+         {
+         	"number":"1",
+         	"text":"Which religious leader was assassinated on 4th April 1968?",
+         	"A":"Jesse Jackson",
+         	"B":"Martin Luther King",
+         	"C":"Mother Theresa",
+         	"D":"Pope Paul",
+         	"ans":"B"
+            
+         },
+         {
+             "number":"2",
+         	"text":"What nationality was the 15th & 16th century navigator, Vasco da Gama?",
+         	"A":"Peruvian",
+         	"B":"Polish",
+         	"C":"Polynesian",
+         	"D":"Portuguese",
+         	"ans":"D"
+         },
+         {
+         	 "number":"3",
+         	"text":"In which year did the Middle East's 'Six Day War' take place?",
+         	"A":"1965",
+         	"B":"1966",
+         	"C":"1967",
+         	"D":"1968",
+         	"ans":"C"
+   
+         },
+         {
+         	 "number":"4",
+         	"text":"Of which independent state did Kwame Nkrumah become the first Prime Minister?",
+         	"A":"Ghana",
+         	"B":"Nigeria",
+         	"C":"Sierra Leone",
+         	"D":"Uganda",
+         	"ans":"A"
+
+         },
+         {
+         	 "number":"5",
+         	"text":"In which South American country did the Incas establish their capital?",
+         	"A":"Chile",
+         	"B":"Colombia",
+         	"C":"Ecuador",
+         	"D":"Peru",
+         	"ans":"D"
+
+         },
+         {
+         	 "number":"6",
+         	"text":"What nationality was the philosopher and mathematician, Pythagoras?",
+         	"A":"Greek",
+         	"B":"Persian",
+         	"C":"Roman",
+         	"D":"Trojan",
+         	"ans":"A"
+         	},
+         	{
+         		 "number":"7",
+         	"text":"Which 51-mile waterway opened to traffic in August 1914?",
+         	"A":"Manchester Ship Canal",
+         	"B":"Panama Canal",
+         	"C":"St Lawrence Seaway",
+         	"D":"Suez Canal",
+         	"ans":"B"
+         	}
+         	
+     ]
+ }

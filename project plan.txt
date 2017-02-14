@@ -1,0 +1,16 @@
+- quizzes will be hosted in seperate json files
+- each json file will have the following format:
+		
+	{
+		"questions": [
+			{
+				"question":"1"
+				"text":"What is OOP"
+				"options":
+
+
+- find out how to call a json file in python
+- import quiz from json file to library
+- 
+- ability to print a quiz list
+- install json library
