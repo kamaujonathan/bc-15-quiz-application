@@ -33,33 +33,29 @@ class quizApp:  # initialize an instance of the class
             print ('That is not a valid input!')
 
             cmd_check = input("\nType Command: ")
-            if cmd_check == "quit" or "q":
-                quit()
+
         while not re.match("quiz list", cmd_check):
             print ('That is not a valid input!')
             try:
                 cmd_check = input("\nType Command: ")
                 self.quit_application(cmd_check, enter_name, answer, quiz_choice)
-                if cmd_check == "quit" or "q":
-                    quit()
+
             except TypeError:
                 print ('That is not a valid input!')
 
 
     def check_input(self):  # function that validates name input and calls the check_command function
         enter_name = input("\nEnter your name: ")
-        if enter_name == "quit" or "q":
-            quit()
+
+
         while not all(x.isalpha() or x.isspace() for x in enter_name):
             print("\nThat is not a valid input!\n")
             enter_name = input("Enter your name: ")
-            if enter_name == "quit" or "q":
-                quit()
+
         else:
             self.insert_table(enter_name)
             cmd_check = input("\nType Command: ")
-            if cmd_check == "quit" or "q":
-                quit()
+
             self.check_command(cmd_check, enter_name)
 
     """def countdown(self,time):
@@ -164,8 +160,7 @@ class quizApp:  # initialize an instance of the class
         number_questions = 0
         test_score = 0
         quiz_choice = input('Enter the number of the quiz you would like to do: ')
-        if quiz_choice == "quit" or "q":
-            quit()
+
         for k, v in query.items():
             if (k == int(quiz_choice)):
                 quiz_name = v
@@ -193,8 +188,7 @@ class quizApp:  # initialize an instance of the class
                 print('')
 
                 answer = input("Answer:").upper()
-                if answer == "quit" or "q":
-                    quit()
+
                 self.quit_application(cmd_check, enter_name, answer, quiz_choice)
                 """time.sleep(5)
                 if answer == "":
