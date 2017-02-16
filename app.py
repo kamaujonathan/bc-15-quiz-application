@@ -35,12 +35,12 @@ class quizApp:  # initialize an instance of the class
             cmd_check = raw_input("\nType Command: ")
 
         while not re.match("quiz list", cmd_check):
-            print ('That is not a valid input!')
+            print ('\nThat is not a valid input!')
             try:
                 cmd_check = raw_input("\nType Command: ")
 
             except TypeError:
-                print ('That is not a valid input!')
+                print ('\nThat is not a valid input!')
 
 
     def check_input(self):  # function that validates name input and calls the check_command function
@@ -132,7 +132,7 @@ class quizApp:  # initialize an instance of the class
         query = {}
 
         json_files = [pos_json for pos_json in os.listdir(path_to_json) if pos_json.endswith('.json')]
-        first_input = input("Press enter to see list of all available quizzes: ")
+        first_input = raw_input("\nPress enter to see list of all available quizzes: ")
         for num, files in enumerate(json_files, 1):
             file_name = os.path.splitext(files)
             query[int(num)] = "," + file_name[0]
@@ -158,20 +158,20 @@ class quizApp:  # initialize an instance of the class
     def check_what_is_chosen(self, query, enter_name):  # allows user to choose the quiz he/she would like to do
         number_questions = 0
         test_score = 0
-        quiz_choice = raw_input('Enter the number of the quiz you would like to do: ')
+        quiz_choice = raw_input('\nEnter the number of the quiz you would like to do: ')
 
         for k, v in query.items():
             if (k == int(quiz_choice)):
                 quiz_name = v
                 quiz_name = quiz_name.replace(',', '')
-                print ("You have chosen " + str.title(quiz_name))
+                print ("\nYou have chosen " + str.title(quiz_name))
                 self.check_for_quiz_take(quiz_name, enter_name, test_score, number_questions)
 
     def check_for_quiz_take(self, quiz_name, enter_name, test_score, number_questions):  # allows useer to take the quiz
         data = ' '
 
         # test = 1
-        second_input = raw_input("Type 'quiz take' to take the quiz: ")
+        second_input = raw_input("\nType 'quiz take' to take the quiz: ")
         if re.match("quiz take", second_input):
             with open("json/" + quiz_name + ".json") as json_file:
                 data = json.load(json_file)
@@ -179,14 +179,14 @@ class quizApp:  # initialize an instance of the class
 
                 # self.countdown(time)
                 number_questions = int(p['number'])
-                print('Question ' + p['number'] + " :" + p['text'])
+                print('\nQuestion ' + p['number'] + " :" + p['text'])
                 print('A: ' + p['A'])
                 print('B: ' + p['B'])
                 print('C: ' + p['C'])
                 print('D: ' + p['D'])
                 print('')
 
-                answer = raw_input("Answer:").upper()
+                answer = raw_input("\nAnswer:").upper()
 
 
                 """time.sleep(5)
@@ -194,7 +194,7 @@ class quizApp:  # initialize an instance of the class
                     continue"""
 
                 if re.match("[A-Da-d]", answer):
-                    correct_message = 'You are correct'
+                    correct_message = '\nYou are correct'
                     if answer == p['ans']:
 
                         test_score += 1
@@ -203,21 +203,21 @@ class quizApp:  # initialize an instance of the class
                         self.update_table(enter_name, quiz_name, test_score, number_questions)
                     elif answer != p['ans']:
                         print ("Wrong Answer! the correct answer is " + p['ans'])
-                        raw_input("Press enter to continue")
+                        raw_input("\nPress enter to continue")
 
                 elif not re.match("[A-Da-d]", answer):
-                    print ('That is not a valid input!')
-                    answer = raw_input("Give your answer: ").upper()
-                    correct_message = 'You are correct'
+                    print ('\nThat is not a valid input!')
+                    answer = raw_input("\nGive your answer: ").upper()
+                    correct_message = '\nYou are correct'
                     if answer == p['ans']:
                         test_score += 1
                         print (correct_message)
 
                         self.update_table(enter_name, quiz_name, test_score, number_questions)
                     while not re.match("[A-Da-d]", answer):
-                        print ('That is not a valid input!')
+                        print ('\nThat is not a valid input!')
                     else:
-                        correct_message = 'You are correct'
+                        correct_message = '\nYou are correct'
                         if answer == p['ans']:
                             test_score += 1
                             print (correct_message)
@@ -229,15 +229,15 @@ class quizApp:  # initialize an instance of the class
 
 
         elif re.match("quiz take", second_input):
-            print ('That is not a valid input!')
-            second_input = raw_input("Type 'quiz take' to take the quiz: ")
+            print ('\nThat is not a valid input!')
+            second_input = raw_input("\nType 'quiz take' to take the quiz: ")
             while not re.match("quiz list", second_input):
-                print ('That is not a valid input!')
+                print ('\nThat is not a valid input!')
                 try:
-                    second_input = raw_input("Type 'quiz take' to take the quiz: ")
+                    second_input = raw_input("\nType 'quiz take' to take the quiz: ")
                 except TypeError:
-                    print ('That is not a valid input!')
-        print ("You have reached the end of Quiz")
+                    print ('\nThat is not a valid input!')
+        print ("\nYou have reached the end of Quiz")
         raw_input("\n\nPress enter to view results")
         self.select_from_table(enter_name, quiz_name, test_score, number_questions)
 
