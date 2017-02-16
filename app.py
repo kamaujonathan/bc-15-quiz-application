@@ -32,28 +32,28 @@ class quizApp:  # initialize an instance of the class
         else:
             print ('That is not a valid input!')
 
-            cmd_check = input("\nType Command: ")
+            cmd_check = raw_input("\nType Command: ")
 
         while not re.match("quiz list", cmd_check):
             print ('That is not a valid input!')
             try:
-                cmd_check = input("\nType Command: ")
+                cmd_check = raw_input("\nType Command: ")
 
             except TypeError:
                 print ('That is not a valid input!')
 
 
     def check_input(self):  # function that validates name input and calls the check_command function
-        enter_name = input("\nEnter your name: ")
+        enter_name = raw_input("\nEnter your name: ")
 
 
         while not all(x.isalpha() or x.isspace() for x in enter_name):
             print("\nThat is not a valid input!\n")
-            enter_name = input("Enter your name: ")
+            enter_name = raw_input("Enter your name: ")
 
         else:
             self.insert_table(enter_name)
-            cmd_check = input("\nType Command: ")
+            cmd_check = raw_input("\nType Command: ")
 
             self.check_command(cmd_check, enter_name)
 
@@ -158,7 +158,7 @@ class quizApp:  # initialize an instance of the class
     def check_what_is_chosen(self, query, enter_name):  # allows user to choose the quiz he/she would like to do
         number_questions = 0
         test_score = 0
-        quiz_choice = input('Enter the number of the quiz you would like to do: ')
+        quiz_choice = raw_input('Enter the number of the quiz you would like to do: ')
 
         for k, v in query.items():
             if (k == int(quiz_choice)):
@@ -171,7 +171,7 @@ class quizApp:  # initialize an instance of the class
         data = ' '
 
         # test = 1
-        second_input = input("Type 'quiz take' to take the quiz: ")
+        second_input = raw_input("Type 'quiz take' to take the quiz: ")
         if re.match("quiz take", second_input):
             with open("json/" + quiz_name + ".json") as json_file:
                 data = json.load(json_file)
@@ -186,7 +186,7 @@ class quizApp:  # initialize an instance of the class
                 print('D: ' + p['D'])
                 print('')
 
-                answer = input("Answer:").upper()
+                answer = raw_input("Answer:").upper()
 
 
                 """time.sleep(5)
@@ -203,11 +203,11 @@ class quizApp:  # initialize an instance of the class
                         self.update_table(enter_name, quiz_name, test_score, number_questions)
                     elif answer != p['ans']:
                         print ("Wrong Answer! the correct answer is " + p['ans'])
-                        input("Press enter to continue")
+                        raw_input("Press enter to continue")
 
                 elif not re.match("[A-Da-d]", answer):
                     print ('That is not a valid input!')
-                    answer = input("Give your answer: ").upper()
+                    answer = raw_input("Give your answer: ").upper()
                     correct_message = 'You are correct'
                     if answer == p['ans']:
                         test_score += 1
@@ -230,15 +230,15 @@ class quizApp:  # initialize an instance of the class
 
         elif re.match("quiz take", second_input):
             print ('That is not a valid input!')
-            second_input = input("Type 'quiz take' to take the quiz: ")
+            second_input = raw_input("Type 'quiz take' to take the quiz: ")
             while not re.match("quiz list", second_input):
                 print ('That is not a valid input!')
                 try:
-                    second_input = input("Type 'quiz take' to take the quiz: ")
+                    second_input = raw_input("Type 'quiz take' to take the quiz: ")
                 except TypeError:
                     print ('That is not a valid input!')
         print ("You have reached the end of Quiz")
-        input("\n\nPress enter to view results")
+        raw_input("\n\nPress enter to view results")
         self.select_from_table(enter_name, quiz_name, test_score, number_questions)
 
 
