@@ -8,8 +8,14 @@ from colorama import Fore, Back, Style
 
 print ("\n\n\n")
 table_header = [
-    ['\t\t\tQuiz Application'],
-    ['\t\t\tDone by Jonathan Kamau']
+    ['\t\t\tQUIZ APPLICATION'],
+    ['\t\t\tDone by Jonathan Kamau'],
+    ['                            '],
+    ['\t\t\tCOMMANDS:'],
+    ['\t\t\tquiz list: Prints a list of quizzes'],
+    ['\t\t\tquiz take: Allows you to take the test']
+
+
 ]
 
 """table_data = [

@@ -1,0 +1,74 @@
+{
+     "questions": 
+     [
+         {
+			 "time" : "30",
+         	"number":"1",
+         	"text":"Which desert occupies a large area in Northern Africa?",
+         	"A":"Atacama",
+         	"B":"Gobi",
+         	"C":"Kalahari",
+         	"D":"Sahara",
+         	"ans":"D"
+            
+         },
+         {
+             "number":"2",
+         	"text":"Which significant line of latitude passes through Kenya?",
+         	"A":"Arctic Circle",
+         	"B":"Equator",
+         	"C":"Tropic of Cancer",
+         	"D":"Tropic of Capricorn",
+         	"ans":"B"
+         },
+         {
+         	 "number":"3",
+         	"text":"Which country is situated immediately to the east of Libya?",
+         	"A":"Egypt",
+         	"B":"Nigeria",
+         	"C":"Tanzania",
+         	"D":"Zambia",
+         	"ans":"A"
+   
+         },
+         {
+         	 "number":"4",
+         	"text":"What is the capital city of Algeria?",
+         	"A":"Accra",
+         	"B":"Algiers",
+         	"C":"Casablanca",
+         	"D":"Tripoli",
+         	"ans":"B"
+
+         },
+         {
+         	 "number":"5",
+         	"text":"In which country can the city of Durban be found?",
+         	"A":"Ghana",
+         	"B":"South Africa",
+         	"C":"Uganda",
+         	"D":"Zimbabwe",
+         	"ans":"B"
+
+         },
+         {
+         	 "number":"6",
+         	"text":"Which large island is separated from mainland Africa by the Mozambique Channel?",
+         	"A":"Cyprus",
+         	"B":"Madagascar",
+         	"C":"Sicily",
+         	"D":"St Helena",
+         	"ans":"B"
+         	},	
+         	{
+         		 "number":"7",
+         	"text":"In which ocean are the Seychelles located?",
+         	"A":"Arctic Ocean",
+         	"B":"Atlantic Ocean",
+         	"C":"Indian Ocean",
+         	"D":"Pacific Ocean",
+         	"ans":"C"
+         	}
+         	
+     ]
+ }

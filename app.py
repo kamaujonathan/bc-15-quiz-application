@@ -32,12 +32,12 @@ class quizApp:  # initialize an instance of the class
         else:
             print ('That is not a valid input!')
 
-            cmd_check = raw_input("\nType Command: ")
+            cmd_check = raw_input("\nType Command 'quiz list': ")
 
         while not re.match("quiz list", cmd_check):
             print ('\nThat is not a valid input!')
             try:
-                cmd_check = raw_input("\nType Command: ")
+                cmd_check = raw_input("\nType Command 'quiz list': ")
 
             except TypeError:
                 print ('\nThat is not a valid input!')
@@ -53,7 +53,7 @@ class quizApp:  # initialize an instance of the class
 
         else:
             self.insert_table(enter_name)
-            cmd_check = raw_input("\nType Command: ")
+            cmd_check = raw_input("\nType Command 'quiz list': ")
 
             self.check_command(cmd_check, enter_name)
 
@@ -240,6 +240,11 @@ class quizApp:  # initialize an instance of the class
         print ("\nYou have reached the end of Quiz")
         raw_input("\n\nPress enter to view results")
         self.select_from_table(enter_name, quiz_name, test_score, number_questions)
+        choice_quiz = raw_input("\n\nType 'y' if you would like to take another quiz or 'q' to quit:")
+        if choice_quiz == 'y':
+            self.check_input()
+        elif choice_quiz == 'q':
+            quit()
 
 
 
