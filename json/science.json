@@ -1,10 +1,15 @@
-1. Which famous scientist is associated with the three laws of motion?
- 
-Albert Einstein
-Stephen Hawking
-Isaac Newton
-James Watt
- 
+{
+  "questions":
+   [
+     {
+        1. Which famous scientist is associated with the three laws of motion?
+
+            Albert Einstein
+            Stephen Hawking
+            Isaac Newton
+            James Watt
+
+
  
 2. Which is the lightest chemical element?
  

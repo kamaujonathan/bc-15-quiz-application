@@ -2,7 +2,7 @@ import json
 
  
 
-with open('history.json') as json_file:  
+with open("json/history.json") as json_file:  
     data = json.load(json_file)
     for p in data['questions']:
         print('Question: ' +p['number']+" "+ p['text'])

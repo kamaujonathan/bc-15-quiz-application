@@ -2,6 +2,7 @@
      "questions": 
      [
          {
+			 "time" : "30",
          	"number":"1",
          	"text":"Which religious leader was assassinated on 4th April 1968?",
          	"A":"Jesse Jackson",
