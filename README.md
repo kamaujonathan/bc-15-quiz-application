@@ -13,6 +13,13 @@ First install a virtual environment:
   apt-get install simplejson
   
 <h2>Functionality</h2>
-quiz list - This prints a list of quizzes
+quiz list - This prints a list of quizzes \n
 quit take - Allows the user to take the quiz
+
+<h2>Author</h2>
+Jonathan Kamau
+
+<h2>License</h2>
+Open Source
+
 
