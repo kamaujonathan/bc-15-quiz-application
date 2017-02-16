@@ -16,12 +16,14 @@ import os
 import re
 import sqlite3
 import command_list
+import time
 from terminaltables import AsciiTable
 
 
 class quizApp: #initialize an instance of the class
-    
+
     def __init__(self):
+
         """ constructor of the class """
 
     def check_command(self,cmd_check,enter_name): #function that checks if the command is correct
@@ -49,9 +51,22 @@ class quizApp: #initialize an instance of the class
             self.insert_table(enter_name)
             cmd_check = input("\nType Command: ")
             self.check_command(cmd_check,enter_name)
-            
-    
-    
+
+    def countdown(self,time):
+        s = 0
+        while True:
+            mins = 5
+            secs = 20
+            #mins, secs = divmod(int(s), time)
+            timeformat = '{:02d}:{:02d}'.format(mins, secs)
+            print(timeformat, end='\r')
+            sleep(1)
+            time -= 1
+        print('Goodbye!\n\n\n\n\n')
+
+    """def countdown(self,time):
+        print('Time Left : {}s'.format(t))
+        time.sleep(t)"""
         
     def initialize_database(self): #initializes the sqlite database
         sqlite_file = 'quiz_db.sqlite'
@@ -86,12 +101,12 @@ class quizApp: #initialize an instance of the class
         conn.commit()
         conn.close()
 
-    def the_answer(self,answer,number_questions,p,quiz_name,enter_name): #checks if the answe given is correct
-        test_score = 0
+    def the_answer(self,answer,number_questions,test_score,p,quiz_name,enter_name): #checks if the answe given is correct
+
         correct_message = 'You are correct'
         if answer == p['ans']:
             print (correct_message)
-            test_score =+1
+            test_score += 1
             self.update_table(enter_name, quiz_name, test_score, number_questions)
         elif answer != p['ans']:
             print ("Wrong Answer! the correct answer is " +p['ans'])
@@ -103,7 +118,7 @@ class quizApp: #initialize an instance of the class
 
         
     def select_from_table(self,enter_name,quiz_name,number_questions): #selects data from table
-        print ("test")
+
         sqlite_file = 'quiz_db.sqlite'
         conn = sqlite3.connect(sqlite_file)
         c = conn.cursor()
@@ -153,22 +168,26 @@ class quizApp: #initialize an instance of the class
         self.check_what_is_chosen(query,enter_name)
 
     def check_what_is_chosen(self,query,enter_name): #allows user to choose the quiz he/she would like to do
+        number_questions = 0
         quiz_choice = input('Enter the number of the quiz you would like to do: ')
         for k, v in query.items():
             if (k == int(quiz_choice)):
                 quiz_name = v
                 quiz_name = quiz_name.replace(',', '')
                 print ("You have chosen "+str.title(quiz_name))
-                self.check_for_quiz_take(quiz_name,enter_name)
+                self.check_for_quiz_take(quiz_name,enter_name,number_questions)
 
-    def check_for_quiz_take(self,quiz_name,enter_name): #allows useer to take the quiz
+    def check_for_quiz_take(self,quiz_name,enter_name,number_questions): #allows useer to take the quiz
         data = ' '
+        test_score = 0
         second_input = input("Type 'quiz take' to take the quiz: ")
         if re.match ("quiz take", second_input):
             with open("json/"+quiz_name+".json") as json_file:
                 data = json.load(json_file)
             for p in data['questions']:
-                number_questions = p['number'] 
+
+                #self.countdown(time)
+                number_questions += int(p['number'])
                 print('Question ' +p['number']+" :"+ p['text'])
                 print('A: ' + p['A'])
                 print('B: ' + p['B'])
@@ -177,15 +196,15 @@ class quizApp: #initialize an instance of the class
                 print('')
                 answer = input("Answer:").upper()
                 if re.match ("[A-Da-d]", answer):
-                    self.the_answer(answer,number_questions,p,quiz_name,enter_name)
+                    self.the_answer(answer,number_questions,test_score,p,quiz_name,enter_name)
                 elif not re.match ("[A-Da-d]", answer):
                     print ('That is not a valid input!')
                     answer= input("Give your answer: ").upper()
-                    self.the_answer(answer,number_questions,p,quiz_name,enter_name)
+                    self.the_answer(answer,number_questions,test_score,p,quiz_name,enter_name)
                     while not re.match ("[A-Da-d]", answer):
                         print ('That is not a valid input!')
                     else:
-                        self.the_answer(answer,number_questions,p,quiz_name,enter_name)
+                        self.the_answer(answer,number_questions,test_score,p,quiz_name,enter_name)
 
 
 
