@@ -38,7 +38,6 @@ class quizApp:  # initialize an instance of the class
             print ('That is not a valid input!')
             try:
                 cmd_check = input("\nType Command: ")
-                self.quit_application(cmd_check, enter_name, answer, quiz_choice)
 
             except TypeError:
                 print ('That is not a valid input!')
@@ -189,7 +188,7 @@ class quizApp:  # initialize an instance of the class
 
                 answer = input("Answer:").upper()
 
-                self.quit_application(cmd_check, enter_name, answer, quiz_choice)
+
                 """time.sleep(5)
                 if answer == "":
                     continue"""
